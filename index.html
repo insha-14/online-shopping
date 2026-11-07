@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insha's Online Shopping Cart Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">insha<span>cart.</span></a>
+    <nav><a href="#products">Products</a><a href="#orders">My Orders</a></nav>
+    <button class="cart-button" onclick="showCart()">Cart <span id="cart-count">0</span></button>
+  </header>
+  <main>
+    <section class="hero">
+      <div><p class="eyebrow">WELCOME TO INSHA CART</p><h1>Find your next<br><span>favorite thing.</span></h1>
+      <p class="hero-copy">Shop everyday essentials at great prices. Add products to your cart and place your order in a few clicks.</p>
+      <a class="primary-btn" href="#products">Explore products</a></div>
+      <div class="hero-art"><div class="art-circle">🛍️</div><div class="floating-tag">A little joy<br>in every order ✨</div></div>
+    </section>
+
+    <section class="account-strip">
+      <div><strong>Your shopping profile</strong><small id="account-status">Register or sign in with your demo customer ID.</small></div>
+      <form id="user-form"><input id="user-id" type="number" min="1" placeholder="Customer ID" required><button class="dark-btn">Use ID</button></form>
+    </section>
+
+    <section class="section" id="products">
+      <div class="section-heading"><div><p class="eyebrow">OUR COLLECTION</p><h2>Popular products</h2></div><span class="muted">Thoughtfully picked for you</span></div>
+      <div id="product-grid" class="product-grid"><p>Loading products...</p></div>
+    </section>
+
+    <section class="section cart-section" id="cart">
+      <div class="section-heading"><div><p class="eyebrow">YOUR SELECTION</p><h2>Shopping cart</h2></div></div>
+      <div class="cart-layout"><div id="cart-items" class="cart-items"><p class="muted">Your cart is empty.</p></div>
+        <aside class="summary"><h3>Order summary</h3><div class="summary-line"><span>Subtotal</span><strong id="subtotal">₹0.00</strong></div>
+        <div class="summary-line"><span>Delivery</span><strong>Free</strong></div><hr><div class="summary-line total"><span>Total</span><strong id="total">₹0.00</strong></div>
+        <button class="primary-btn full" onclick="checkout()">Place order</button><small>Sign in with your customer ID before checkout.</small></aside></div>
+    </section>
+
+    <section class="section" id="orders"><div class="section-heading"><div><p class="eyebrow">PURCHASE HISTORY</p><h2>Your orders</h2></div><button class="outline-btn" onclick="loadOrders()">Refresh</button></div><div id="order-list" class="orders-box">Enter your customer ID to view orders.</div></section>
+
+    <section class="admin section"><div><p class="eyebrow">STORE MANAGEMENT</p><h2>Add a product</h2><p class="muted">Demo admin form for adding products to the catalogue.</p></div>
+      <form id="product-form" class="product-form">
+        <input name="product_name" placeholder="Product name" required><input name="category" placeholder="Category" required>
+        <input name="price" type="number" min="0" step="0.01" placeholder="Price (₹)" required><input name="stock" type="number" min="0" placeholder="Stock quantity" required>
+        <input name="description" placeholder="Short description" class="wide"><button class="dark-btn">Add product</button>
+      </form>
+    </section>
+  </main>
+  <footer>© 2026 Insha Cart · Online Shopping Cart Management System</footer>
+  <div id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body></html>
